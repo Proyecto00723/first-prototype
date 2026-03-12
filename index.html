@@ -267,16 +267,8 @@
     <!-- Firebase SDK -->
 
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"; import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js"; const firebaseConfig = {
-  apiKey: "AIzaSyBpUX-bHM7tO6azpEPj2-56k9QfZhkttkw",
-  authDomain: "stylishsteps-b67e8.firebaseapp.com",
-  databaseURL: "https://stylishsteps-b67e8-default-rtdb.firebaseio.com",
-  projectId: "stylishsteps-b67e8",
-  storageBucket: "stylishsteps-b67e8.firebasestorage.app",
-  messagingSenderId: "855401239447",
-  appId: "1:855401239447:web:a0d9ca75fec39f3a21ead2",
-  measurementId: "G-HV24CLYXRF"
-}; const app = initializeApp(firebaseConfig); const db = getDatabase(app); const productosRef = ref(db, "productos"); onValue(productosRef, (snapshot) => { const
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"; import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js"; const firebaseConfig = { apiKey: "AIzaSyAejrbK9T57bdc5MpYRzvioWdWUKyBOR4Q", authDomain: "ventas-tecnologicas-fe784.firebaseapp.com", databaseURL: "https://ventas-tecnologicas-fe784-default-rtdb.firebaseio.com", projectId: "ventas-tecnologicas-fe784",
+        storageBucket: "ventas-tecnologicas-fe784.firebasestorage.app", messagingSenderId: "673551715331", appId: "1:673551715331:web:830ec279ac978ccf711236" }; const app = initializeApp(firebaseConfig); const db = getDatabase(app); const productosRef = ref(db, "productos"); onValue(productosRef, (snapshot) => { const
         contenedor = document.getElementById("vistaProductos"); contenedor.innerHTML = ""; snapshot.forEach((childSnapshot) => { const p = childSnapshot.val(); const div = document.createElement("div"); div.className = "producto"; const agotado = p.cantidad
         <=0 ? `<div class="agotado">NO DISPONIBLE</div>` : ""; const oferta = p.descuento > 0 ? `
             <div class="etiqueta-oferta">${p.descuento}% OFF</div>` : ""; const precioHTML = p.descuento > 0 ? `
@@ -324,4 +316,5 @@
 </body>
 
 </html>
+
 
