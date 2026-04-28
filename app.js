@@ -154,3 +154,67 @@ db.ref("ventas").on("value", snapshot => {
     });
 
 });
+
+
+import { getFirestore, doc, deleteDoc } from "firebase/firestore";
+
+const db = getFirestore();
+
+async function eliminarProducto(id) {
+    try {
+        await deleteDoc(doc(db, "productos", id));
+        alert("Producto eliminado correctamente");
+    } catch (error) {
+        console.error("Error al eliminar:", error);
+        alert("Error al eliminar producto");
+    }
+}
+
+
+async function eliminarProducto(id) {
+    const confirmacion = confirm("¿Seguro que deseas eliminar este producto?");
+    
+    if (!confirmacion) return;
+
+    try {
+        await deleteDoc(doc(db, "productos", id));
+        alert("Producto eliminado correctamente");
+    } catch (error) {
+        console.error(error);
+        alert("Error al eliminar");
+    }
+}
+
+cargarProductos();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
